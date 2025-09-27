@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "available": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "monthly_price": {
+      "type": "string",
+      "required": true
+    },
+    "deposit_price": {
+      "type": "string",
+      "required": true
+    },
+    "property_images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "floors": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "property_type": {
+      "type": "string"
+    },
+    "bedrooms": {
+      "type": "string"
+    },
+    "bathrooms": {
+      "type": "string"
+    },
+    "heating": {
+      "type": "string"
+    },
+    "parking_spots": {
+      "type": "string"
+    },
+    "floor_plan": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "property": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::property.property",
+      "inversedBy": "properties"
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property.property",
+      "mappedBy": "property"
+    }
+  }
+}
