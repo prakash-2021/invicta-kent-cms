@@ -24,6 +24,10 @@
       "type": "string",
       "required": true
     },
+    "google_map_location": {
+      "type": "string",
+      "required": true
+    },
     "description": {
       "type": "text",
       "required": true
@@ -73,18 +77,6 @@
         "images",
         "files"
       ]
-    },
-    "property": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::property.property",
-      "inversedBy": "properties"
-    },
-    "properties": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::property.property",
-      "mappedBy": "property"
     }
   }
 }

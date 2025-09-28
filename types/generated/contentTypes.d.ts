@@ -396,6 +396,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     floor_plan: Schema.Attribute.Media<'images' | 'files'>;
     floors: Schema.Attribute.String;
+    google_map_location: Schema.Attribute.String & Schema.Attribute.Required;
     heating: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -406,11 +407,6 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.String & Schema.Attribute.Required;
     monthly_price: Schema.Attribute.String & Schema.Attribute.Required;
     parking_spots: Schema.Attribute.String;
-    properties: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::property.property'
-    >;
-    property: Schema.Attribute.Relation<'manyToOne', 'api::property.property'>;
     property_images: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
     property_type: Schema.Attribute.String;

@@ -17,6 +17,7 @@ export default (config, { strapi }) => {
           "bathrooms",
           "heating",
           "parking_spots",
+          "google_map_location",
         ],
         populate: {
           property_images: {
